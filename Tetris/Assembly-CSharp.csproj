@@ -63,6 +63,8 @@
     <Compile Include="Assets\Scripts\Commands\AppStartCommand.cs" />
     <Compile Include="Assets\Scripts\Commands\HideLoadingCommand.cs" />
     <Compile Include="Assets\Scripts\Commands\ShowLoadingCommand.cs" />
+    <Compile Include="Assets\Scripts\CoroutineExecuter.cs" />
+    <Compile Include="Assets\Scripts\IExecuter.cs" />
     <Compile Include="Assets\Scripts\MainContext.cs" />
     <Compile Include="Assets\Scripts\MainContextView.cs" />
     <Compile Include="Assets\Scripts\SignalContext.cs" />

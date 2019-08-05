@@ -14,6 +14,7 @@ public class MainContext : SignalContext
 	{
 		base.mapBindings();
 
-		commandBinder.Bind<AppStartSignal>().InSequence().To<ShowLoadingCommand>().To<AppStartCommand>().To<HideLoadingCommand>().Once(); /* InSequence - posledovatelnost' */
+		injectionBinder.Bind<IExecuter>().To<CoroutineExecuter>().ToSingleton();
+		commandBinder.Bind<AppStartSignal>().InSequence().To<ShowLoadingCommand>().To<AppStartCommand>().To<HideLoadingCommand>().Once(); /* InSequence - posledovatelnost' */ /* Can swap commands without many moves, wow! */
 	}
 }
