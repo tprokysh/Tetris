@@ -14,6 +14,6 @@ public class MainContext : SignalContext
 	{
 		base.mapBindings();
 
-		commandBinder.Bind<AppStartSignal>().To<AppStartCommand>().Once();
+		commandBinder.Bind<AppStartSignal>().InSequence().To<ShowLoadingCommand>().To<AppStartCommand>().To<HideLoadingCommand>().Once(); /* InSequence - posledovatelnost' */
 	}
 }
