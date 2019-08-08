@@ -4,4 +4,5 @@ using UnityEngine;
 
 public interface ITetriminoPieceModel
 {
+	Vector3[] spawPoint { get; set; }
 }
