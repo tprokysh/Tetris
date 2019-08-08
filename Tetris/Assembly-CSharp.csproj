@@ -60,14 +60,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Commands\AppStartCommand.cs" />
-    <Compile Include="Assets\Scripts\MainContext.cs" />
-    <Compile Include="Assets\Scripts\MainContextView.cs" />
-    <Compile Include="Assets\Scripts\Model\ITetriminoPieceModel.cs" />
-    <Compile Include="Assets\Scripts\Model\TetriminoPieceModel.cs" />
-    <Compile Include="Assets\Scripts\SignalContext.cs" />
-    <Compile Include="Assets\Scripts\Signals.cs" />
-    <Compile Include="Assets\Scripts\View\TetrominoView.cs" />
+    <Compile Include="Assets\Resources\Scripts\Context\MainContext.cs" />
+    <Compile Include="Assets\Resources\Scripts\Context\MainContextView.cs" />
+    <Compile Include="Assets\Resources\Scripts\Context\SignalContext.cs" />
+    <Compile Include="Assets\Resources\Scripts\Context\Signals.cs" />
+    <Compile Include="Assets\Resources\Scripts\Controller\AppStartCommand.cs" />
+    <Compile Include="Assets\Resources\Scripts\Controller\TetriminoPlaceCommand.cs" />
+    <Compile Include="Assets\Resources\Scripts\Model\ITetriminoPieceModel.cs" />
+    <Compile Include="Assets\Resources\Scripts\Model\TetriminoPieceModel.cs" />
+    <Compile Include="Assets\Resources\Scripts\Utils\VFXPlayer.cs" />
+    <Compile Include="Assets\Resources\Scripts\View\TetrominoView.cs" />
     <Compile Include="Assets\StrangeIoC\scripts\strange\extensions\command\api\CommandExceptionType.cs" />
     <Compile Include="Assets\StrangeIoC\scripts\strange\extensions\command\api\CommandKeys.cs" />
     <Compile Include="Assets\StrangeIoC\scripts\strange\extensions\command\api\ICommand.cs" />
