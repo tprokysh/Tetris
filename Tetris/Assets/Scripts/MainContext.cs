@@ -14,6 +14,7 @@ public class MainContext : SignalContext
 	{
 		base.mapBindings();
 
-		commandBinder.Bind<AppStartSignal>().To<AppStartCommand>().Once();
+		commandBinder.Bind <AppStartSignal>().To<AppStartCommand>().Once();
+		injectionBinder.Bind<TetrominoView>().ToSingleton();
 	}
 }

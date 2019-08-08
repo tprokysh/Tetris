@@ -63,8 +63,11 @@
     <Compile Include="Assets\Scripts\Commands\AppStartCommand.cs" />
     <Compile Include="Assets\Scripts\MainContext.cs" />
     <Compile Include="Assets\Scripts\MainContextView.cs" />
+    <Compile Include="Assets\Scripts\Model\ITetriminoPieceModel.cs" />
+    <Compile Include="Assets\Scripts\Model\TetriminoPieceModel.cs" />
     <Compile Include="Assets\Scripts\SignalContext.cs" />
     <Compile Include="Assets\Scripts\Signals.cs" />
+    <Compile Include="Assets\Scripts\View\TetrominoView.cs" />
     <Compile Include="Assets\StrangeIoC\scripts\strange\extensions\command\api\CommandExceptionType.cs" />
     <Compile Include="Assets\StrangeIoC\scripts\strange\extensions\command\api\CommandKeys.cs" />
     <Compile Include="Assets\StrangeIoC\scripts\strange\extensions\command\api\ICommand.cs" />
@@ -178,6 +181,8 @@
     <Compile Include="Assets\StrangeIoC\scripts\strange\framework\impl\SemiBinding.cs" />
     <Compile Include="Assets\StrangeIoC\scripts\strange\ReadMe.cs" />
     <None Include="Assets\StrangeIoC\scripts\strange\extensions\ReadMe.txt" />
+    <None Include="Assets\StrangeIoC\LICENSE-2.0.txt" />
+    <None Include="Assets\StrangeIoC\README.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/UnityGame/Tetris/Tetris/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class AppStartCommand : Command
 {
+	[Inject]
+	public TetrominoView TetrominoView { get; private set; }
+
 	public override void Execute()
 	{
-//		base.Execute(); /* idk but seems useless */
-		Debug.Log("Test");
+		for (int i = 0; i < 3; i++)
+		{
+			float step = 4 * i;
+			Vector3 spawnPoint = new Vector3(-1.61f + step, -3.67f, 0f);
+			TetrominoView.SpawnTetromino(spawnPoint);
+		}
 	}
 }
