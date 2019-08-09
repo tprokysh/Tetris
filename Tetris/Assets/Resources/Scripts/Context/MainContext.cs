@@ -14,8 +14,8 @@ public class MainContext : SignalContext
 	{
 		base.mapBindings();
 
-		commandBinder.Bind <AppStartSignal>().To<AppStartCommand>().Once();
-		commandBinder.Bind <TetriminoPlaceSignal>().To<TetriminoPlaceCommand>().Once();
+		commandBinder.Bind <SpawnTetrominoSignal>().To<SpawnTetrominoCommand>();
+		commandBinder.Bind <TetriminoPlaceSignal>().To<TetriminoPlaceCommand>();
 		injectionBinder.Bind<TetrominoView>().ToSingleton();
 		injectionBinder.Bind<ITetriminoPieceModel>().To<TetriminoPieceModel>();
 	}

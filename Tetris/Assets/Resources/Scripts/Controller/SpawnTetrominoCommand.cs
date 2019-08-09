@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class AppStartCommand : Command
+public class SpawnTetrominoCommand : Command
 {
 	[Inject]
 	public TetrominoView TetrominoView { get; private set; }

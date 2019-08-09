@@ -1,6 +1,7 @@
 ﻿/* Signals it's like events in C# */
 using strange.extensions.signal.impl;
+using UnityEngine;
 
-public class AppStartSignal : Signal { }
+public class SpawnTetrominoSignal : Signal { }
 
-public class TetriminoPlaceSignal : Signal { }
+public class TetriminoPlaceSignal : Signal<GameObject> { }

@@ -23,7 +23,7 @@ public class SignalContext : MVCSContext
 	{
 		base.Launch();
 
-		var startSignal = injectionBinder.GetInstance<AppStartSignal>();
+		var startSignal = injectionBinder.GetInstance<SpawnTetrominoSignal>();
 		startSignal.Dispatch();
 	}
 

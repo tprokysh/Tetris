@@ -8,6 +8,9 @@ public class TetrominoView : View
 	[Inject]
 	public ITetriminoPieceModel TetriminoPieceModel { get; private set; }
 
+	[Inject]
+	public TetriminoPlaceSignal TetriminoPlaceSignal { get; private set; }
+
 	public GameObject AudioObject { get; set; }
 	private GameObject goTetromino;
 	Object[] tetrominos;
@@ -15,7 +18,7 @@ public class TetrominoView : View
 	private int number;
 	private float startPosX;
 	private float startPosY;
-	public GameObject camera { get; set; }
+
 	public void SpawnTetromino(Vector3 spawnPoint, int number)
 	{
 		tetrominos = Resources.LoadAll("Shapes");
@@ -36,31 +39,29 @@ public class TetrominoView : View
 
 	private void OnMouseDown()
 	{
-		if (Input.GetMouseButtonDown(0))
+		VFXPlayer.PlaySound("click");
+		Vector3 mousePos = Input.mousePosition;
+		mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+		startPosX = mousePos.x - this.transform.localPosition.x;
+		startPosY = mousePos.y - this.transform.localPosition.y;
+		isBeingHeld = true;
+		if (this.gameObject.transform.localPosition == TetriminoPieceModel.spawPoint[0])
 		{
-			VFXPlayer.PlaySound("click");
-			Vector3 mousePos = Input.mousePosition;
-			mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-			startPosX = mousePos.x - this.transform.localPosition.x;
-			startPosY = mousePos.y - this.transform.localPosition.y;
-			isBeingHeld = true;
-			if (this.gameObject.transform.localPosition == TetriminoPieceModel.spawPoint[0])
-			{
-				number = 0;
-			}
-			if (this.gameObject.transform.localPosition == TetriminoPieceModel.spawPoint[1])
-			{
-				number = 1;
-			}
-			if (this.gameObject.transform.localPosition == TetriminoPieceModel.spawPoint[2])
-			{
-				number = 2;
-			}
+			number = 0;
+		}
+		if (this.gameObject.transform.localPosition == TetriminoPieceModel.spawPoint[1])
+		{
+			number = 1;
+		}
+		if (this.gameObject.transform.localPosition == TetriminoPieceModel.spawPoint[2])
+		{
+			number = 2;
 		}
 	}
 
 	private void OnMouseUp()
 	{
+		TetriminoPlaceSignal.Dispatch(this.gameObject);
 		VFXPlayer.PlaySound("drop");
 		this.gameObject.transform.localPosition = new Vector3(TetriminoPieceModel.spawPoint[number].x, TetriminoPieceModel.spawPoint[number].y, 0);
 		isBeingHeld = false;

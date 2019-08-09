@@ -64,7 +64,7 @@
     <Compile Include="Assets\Resources\Scripts\Context\MainContextView.cs" />
     <Compile Include="Assets\Resources\Scripts\Context\SignalContext.cs" />
     <Compile Include="Assets\Resources\Scripts\Context\Signals.cs" />
-    <Compile Include="Assets\Resources\Scripts\Controller\AppStartCommand.cs" />
+    <Compile Include="Assets\Resources\Scripts\Controller\SpawnTetrominoCommand.cs" />
     <Compile Include="Assets\Resources\Scripts\Controller\TetriminoPlaceCommand.cs" />
     <Compile Include="Assets\Resources\Scripts\Model\ITetriminoPieceModel.cs" />
     <Compile Include="Assets\Resources\Scripts\Model\TetriminoPieceModel.cs" />
