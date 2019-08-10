@@ -19,7 +19,7 @@ public class TetrominoView : View
 	private float startPosX;
 	private float startPosY;
 
-	public void SpawnTetromino(Vector3 spawnPoint, int number)
+	internal void SpawnTetromino(Vector3 spawnPoint, int number)
 	{
 		tetrominos = Resources.LoadAll("Shapes");
 		goTetromino = Instantiate(tetrominos[Random.Range(0, tetrominos.Length)], spawnPoint, Quaternion.identity) as GameObject;
@@ -61,9 +61,9 @@ public class TetrominoView : View
 
 	private void OnMouseUp()
 	{
-		TetriminoPlaceSignal.Dispatch(this.gameObject);
-		VFXPlayer.PlaySound("drop");
-		this.gameObject.transform.localPosition = new Vector3(TetriminoPieceModel.spawPoint[number].x, TetriminoPieceModel.spawPoint[number].y, 0);
 		isBeingHeld = false;
+		VFXPlayer.PlaySound("drop");
+		TetriminoPlaceSignal.Dispatch(this.gameObject);
+		this.gameObject.transform.localPosition = new Vector3(TetriminoPieceModel.spawPoint[number].x, TetriminoPieceModel.spawPoint[number].y, 0);
 	}
 }
