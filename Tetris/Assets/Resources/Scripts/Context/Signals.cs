@@ -5,5 +5,3 @@ using UnityEngine;
 public class SpawnTetrominoSignal : Signal { }
 
 public class TetriminoPlaceSignal : Signal<GameObject> { }
-
-public class FillFieldSignal : Signal { }

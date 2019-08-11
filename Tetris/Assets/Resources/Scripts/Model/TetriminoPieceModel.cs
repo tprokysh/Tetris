@@ -15,9 +15,9 @@ public class TetriminoPieceModel : ITetriminoPieceModel
 		Placed = 0;
 		field = new Transform[10, 10];
 		spawPoint = new Vector3[3];
-		spawPoint[0] = new Vector3(-3.54f, -5.35f, 0f);
-		spawPoint[1] = new Vector3(0.14f, -5.35f, 0f);
-		spawPoint[2] = new Vector3(3.69f, -5.35f, 0f);
+		spawPoint[0] = new Vector3(-0.02f, -3.41f, 0f);
+		spawPoint[1] = new Vector3(3.5f, -3.41f, 0f);
+		spawPoint[2] = new Vector3(7.07f, -3.41f, 0f);
 	}
 
 	public bool CheckInsideField(Transform Tetromino)
@@ -25,8 +25,6 @@ public class TetriminoPieceModel : ITetriminoPieceModel
 		foreach (Transform mino in Tetromino)
 		{
 			Vector3 minoPos = Round(mino.position);
-//			Debug.Log(field[(int)minoPos.x, (int)minoPos.y]);
-//			Debug.Log()
 			if (!((int)minoPos.x >= 0 && (int)minoPos.x < 10 && (int)minoPos.y >= 0 && (int)minoPos.y < 10))
 				return (false);
 		}
@@ -95,4 +93,52 @@ public class TetriminoPieceModel : ITetriminoPieceModel
 		}
 		return (true);
 	}
+
+	public void CheckIfCanDelRowVer()
+	{
+		int col;
+
+		col = 0;
+		while (col < 10)
+		{
+			CheckIsRowFilledVer(col);
+			col++;
+		}
+	}
+
+	public void CheckIsRowFilledVer(int col)
+	{
+		int row;
+		int filled;
+
+		row = 0;
+		filled = 0;
+		while (row < 10)
+		{
+			if (field[col, row] != null)
+			{
+				filled++;
+			}
+			row++;
+		}
+		if (filled == 10)
+		{
+			Debug.Log("CanDel");
+			DelRowVer(col);
+		}
+	}
+
+	public void DelRowVer(int col)
+	{
+		int row;
+
+		row = 0;
+		while (row < 10)
+		{
+			GameObject.Destroy(field[col, row].gameObject);
+			field[col, row] = null;
+			row++;
+		}
+	}
+
 }

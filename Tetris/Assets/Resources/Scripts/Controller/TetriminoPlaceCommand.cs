@@ -36,6 +36,7 @@ public class TetriminoPlaceCommand : Command
 			tetriminoPieceModel.Placed++;
 			GameObject.Destroy(Tetromino);
 			tetriminoPieceModel.CheckIfCanDelRow();
+			tetriminoPieceModel.CheckIfCanDelRowVer();
 			if (tetriminoPieceModel.Placed == 3)
 			{
 				SpawnTetromino.Dispatch();

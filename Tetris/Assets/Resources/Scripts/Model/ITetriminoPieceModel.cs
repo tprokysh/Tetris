@@ -14,4 +14,6 @@ public interface ITetriminoPieceModel
 	void CheckIsRowFilled(int row);
 	void DelRow(int row);
 	int Placed { get; set; }
+	void CheckIfCanDelRowVer();
+	void DelRowVer(int col);
 }
